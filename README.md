@@ -13,6 +13,8 @@ Node : 8.4.0
 Pc : Intel(R) Core i7-6500U CPU 2.50GHZ 2.59GHZ 8.00Go RAM  
 OS : Windows 10
 
+3 runs : only the results of third run are kept.  
+
 **express 4.15.4**
 
 ```
