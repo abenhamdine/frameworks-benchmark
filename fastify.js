@@ -1,8 +1,12 @@
 const dataBig = require('./data/dataBig');
 const dataSmall = require('./data/dataSmall');
 const fastify = require('fastify')();
+const options = require('./data/fastifyOptions');
 // Declare a route
 fastify.get('/big', function(_req, res) {
+    res.send(dataBig);
+});
+fastify.get('/bigschema', options, function(_req, res) {
     res.send(dataBig);
 });
 fastify.get('/small', function(_req, res) {

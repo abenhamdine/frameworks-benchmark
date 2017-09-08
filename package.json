@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-perf": "autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/hello"
+    "test-perf-express": "autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/hello",
+    "test-perf-fastify": "autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/bigschema && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/hello"
   },
   "author": "“Arnaud <arnaud.benhamdine@gmail.com>",
   "license": "ISC",
