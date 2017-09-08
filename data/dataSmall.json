@@ -1,0 +1,44 @@
+[
+    {
+        "type": "rpc",
+        "tid": 8710,
+        "action": "Generic",
+        "method": "read",
+        "result": {
+            "data": [
+                {
+                    "sal_id": 1088,
+                    "sal_prenom": "Eric",
+                    "sal_nom_usage": "Durand",
+                    "sal_nom_famille": "Durand",
+                    "sal_matricule": "170829-519555",
+                    "pad_id": 23,
+                    "nb_contrats": null,
+                    "last_cnt_desc": null
+                },
+                {
+                    "sal_id": 298,
+                    "sal_prenom": "Lahcen",
+                    "sal_nom_usage": "Durand",
+                    "sal_nom_famille": "Durand",
+                    "sal_matricule": "170414-997785",
+                    "pad_id": 23,
+                    "nb_contrats": 2,
+                    "last_cnt_desc": "CMIS du 03/04/2017 au 28/04/2017"
+                },
+                {
+                    "sal_id": 735,
+                    "sal_prenom": "Mohamed",
+                    "sal_nom_usage": "Durand",
+                    "sal_nom_famille": "Durand",
+                    "sal_matricule": "170704-753051",
+                    "pad_id": 23,
+                    "nb_contrats": 2,
+                    "last_cnt_desc": "CMIS du 31/08/2017 au 31/08/2017"
+                }
+            ],
+            "total": 860,
+            "success": true
+        }
+    }
+]

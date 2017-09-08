@@ -1,0 +1,17 @@
+{
+  "name": "frameworks-benchmark",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-perf": "autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/hello"
+  },
+  "author": "“Arnaud <arnaud.benhamdine@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "autocannon": "^0.16.5",
+    "express": "^4.15.4",
+    "fastify": "^0.26.2",
+    "uws": "^8.14.1"
+  }
+}
