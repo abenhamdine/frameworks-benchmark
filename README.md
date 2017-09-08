@@ -9,6 +9,7 @@ Data sent back by both /big and /small routes are real-world data (anonymized) c
 
 ### Results
 
+Node : 8.4.0  
 Pc : Intel(R) Core i7-6500U CPU 2.50GHZ 2.59GHZ 8.00Go RAM  
 OS : Windows 10
 
