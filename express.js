@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+app.disable('etag')
 const dataBig = require('./data/dataBig');
 const dataSmall = require('./data/dataSmall');
 app.get('/big', (_req, res) => {
