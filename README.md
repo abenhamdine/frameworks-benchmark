@@ -35,6 +35,7 @@ Req/Sec      577.6   23.07   601
 Bytes/Sec    98.6 MB 4.59 MB 105 MB
 
 3k requests in 5s, 493 MB read
+
 Running 5s test @ http://localhost:3000/small
 100 connections
 
@@ -44,6 +45,7 @@ Req/Sec      10336.4 1511.37 11119
 Bytes/Sec    8.89 MB 1.38 MB 9.96 MB
 
 52k requests in 5s, 44.1 MB read
+
 Running 5s test @ http://localhost:3000/hello
 100 connections
 
@@ -107,6 +109,6 @@ Bytes/Sec    4.29 MB 360 kB  4.72 MB
 
 ### Conclusion
 
-- **Fastify beats express in 'small' and 'hello' tests.**  
+- **Fastify is much faster then Express in 'small' and 'hello' tests (roughly x2 performance)**  
 - **However concerning the 'big' test, Express is sligthly better.**
 - **With big response, Fastify can only match Express performance by using schema validation (route /bigschema in the tests) which allows to enable faster Json stringification**
