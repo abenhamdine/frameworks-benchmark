@@ -9,7 +9,9 @@ Data sent back by both /big and /small routes are real-world data (anonymized) c
 
 ### Results
 
-Node : 8.4.0  
+Updated 19/09/2017
+
+Node : 8.5.0  
 Pc : Intel(R) Core i7-6500U CPU 2.50GHZ 2.59GHZ 8.00Go RAM  
 OS : Windows 10
 
@@ -18,81 +20,93 @@ OS : Windows 10
 **express 4.15.4**
 
 ```
-$ npm run test-perf
+npm run test-perf-express
 
-> frameworks-benchmark@0.0.0 test-perf C:\node-projects\frameworks-benchmark
-> autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/hello
+> frameworks-benchmark@0.0.0 test-perf-express C:\node-projects\frameworks-benchmark
+> autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/
+hello
 
 Running 5s test @ http://localhost:3000/big
 100 connections
 
 Stat         Avg     Stdev   Max
-Latency (ms) 190.27  39.06   327
-Req/Sec      515.21  15.11   538
-Bytes/Sec    89.3 MB 3.14 MB 96.5 MB
+Latency (ms) 169.47  50.65   379
+Req/Sec      577.6   23.07   601
+Bytes/Sec    98.6 MB 4.59 MB 105 MB
 
-3k requests in 5s, 446 MB read
+3k requests in 5s, 493 MB read
 Running 5s test @ http://localhost:3000/small
+100 connections
+
+Stat         Avg     Stdev   Max
+Latency (ms) 9.15    3.32    49
+Req/Sec      10336.4 1511.37 11119
+Bytes/Sec    8.89 MB 1.38 MB 9.96 MB
+
+52k requests in 5s, 44.1 MB read
+Running 5s test @ http://localhost:3000/hello
 100 connections
 
 Stat         Avg     Stdev  Max
-Latency (ms) 10.59   2.36   38
-Req/Sec      9032.8  216.84 9319
-Bytes/Sec    8.57 MB 157 kB 8.91 MB
+Latency (ms) 8.12    2.95   43
+Req/Sec      11610.4 832.47 12383
+Bytes/Sec    2.16 MB 156 kB 2.36 MB
 
-45k requests in 5s, 42.3 MB read
-
-Running 5s test @ http://localhost:3000/hello
-100 connections
-
-Stat         Avg      Stdev Max
-Latency (ms) 9.4      2.28  34
-Req/Sec      10071.21 60    10183
-Bytes/Sec    2.29 MB  0 B   2.36 MB
-
-50k requests in 5s, 11.5 MB read
+58k requests in 5s, 10.9 MB read
 
 ```
 
-fastify
+fastify 0.27
 ```
-$ npm run test-perf
+$ npm run test-perf-fastify
 
-> frameworks-benchmark@0.0.0 test-perf C:\node-projects\frameworks-benchmark
-> autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/small && autocannon -c 100 -d 5 localhost:3000/hello
+> frameworks-benchmark@0.0.0 test-perf-fastify C:\node-projects\frameworks-benchmark
+> autocannon -c 100 -d 5 localhost:3000/big && autocannon -c 100 -d 5 localhost:3000/bigschema && autocannon -c 100 -d 5 localhost:3
+000/small && autocannon -c 100 -d 5 localhost:3000/hello
 
 Running 5s test @ http://localhost:3000/big
 100 connections
 
-Stat         Avg     Stdev   Max
-Latency (ms) 242.19  33.54   339
-Req/Sec      400.8   32.55   435
-Bytes/Sec    69.4 MB 6.09 MB 75.5 MB
+Stat         Avg    Stdev   Max
+Latency (ms) 194.49 13.32   238
+Req/Sec      507.8  26.2    533
+Bytes/Sec    86 MB  4.59 MB 92.3 MB
 
-2k requests in 5s, 347 MB read
+3k requests in 5s, 434 MB read
+
+Running 5s test @ http://localhost:3000/bigschema
+100 connections
+
+Stat         Avg     Stdev   Max
+Latency (ms) 171.4   10.6    215
+Req/Sec      580.21  39.6    600
+Bytes/Sec    70.7 MB 5.45 MB 75.5 MB
+
+3k requests in 5s, 345 MB read
 
 Running 5s test @ http://localhost:3000/small
 100 connections
 
-Stat         Avg      Stdev   Max
-Latency (ms) 4.88     1.54    32
-Req/Sec      18562.41 2378.39 20671
-Bytes/Sec    15.8 MB  2.05 MB 17.8 MB
+Stat         Avg     Stdev   Max
+Latency (ms) 4.04    1.55    37
+Req/Sec      22388.8 1850.55 23535
+Bytes/Sec    18.6 MB 1.57 MB 19.9 MB
 
-93k requests in 5s, 79.4 MB read
+112k requests in 5s, 91.2 MB read
 
 Running 5s test @ http://localhost:3000/hello
 100 connections
 
 Stat         Avg     Stdev   Max
-Latency (ms) 3.15    1.19    33
-Req/Sec      27620.8 1860.15 28815
-Bytes/Sec    4.18 MB 288 kB  4.46 MB
+Latency (ms) 2.96    1.45    39
+Req/Sec      28804.8 2243.12 30671
+Bytes/Sec    4.29 MB 360 kB  4.72 MB
 
-138k requests in 5s, 20.6 MB read
+144k requests in 5s, 21.5 MB read
 ```
 
 ### Conclusion
 
-- Fastify beats express in 'small' and 'hello' tests.  
-- However concerning the 'big' test, Express is sligthly better.
+- **Fastify beats express in 'small' and 'hello' tests.**  
+- **However concerning the 'big' test, Express is sligthly better.**
+- **With big response, Fastify can only match Express performance by using schema validation (route /bigschema in the tests) which allows to enable faster Json stringification**
