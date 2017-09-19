@@ -10,9 +10,9 @@
   "author": "“Arnaud <arnaud.benhamdine@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "autocannon": "^0.16.5",
-    "express": "^4.15.4",
-    "fastify": "^0.26.2",
+    "autocannon": "^0",
+    "express": "^4",
+    "fastify": "^0",
     "uws": "^8.14.1"
   }
 }
