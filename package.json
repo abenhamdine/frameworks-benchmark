@@ -12,7 +12,7 @@
   "dependencies": {
     "autocannon": "^0",
     "express": "^4",
-    "fastify": "^0",
+    "fastify": "^1.0.0",
     "uws": "^8.14.1"
   }
 }
